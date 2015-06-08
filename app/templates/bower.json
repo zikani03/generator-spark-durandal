@@ -1,0 +1,14 @@
+{
+    "name" : "<%= packageName %>",
+    "version": "0.0.1",
+    "author": "YOUR NAME HERE",
+    "dependencies" : {
+        "knockout" : "^3.3.0",
+        "Durandal" : "~2.1.0",
+        "bootstrap-css": "latest",
+    },
+    "devDependencies" : {},
+    "resolutions" : {
+        "knockout.js": "knockout"
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "generator-spark-durandal",
+  "version": "0.0.1",
+  "description": "Yeoman generator for a Spark Framework 2.0. application with a DurandalJS front-end",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/zikani03/generator-spark-durandal.git"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "Spark Java",
+    "Framework",
+    "Java 8",
+    "DurandalJS",
+    "Knockout"
+  ],
+  "author": "Zikani Nyirenda Mwase",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zikani03/generator-spark-durandal/issues"
+  },
+  "dependencies": {
+    "cmd.js": "^0.2.2",
+    "json-schema": "^0.2.2",
+    "lodash": "^3.6.0",
+    "yeoman-generator": "^0.19.1"
+  }
+}
