@@ -98,6 +98,26 @@ module.exports = yeoman.generators.Base.extend({
             return pathArr.join(path.sep);
         };
         
+        var viewsSrc = 'src/main/resources/assets/app/';
+        var views = [
+            'views/shell.html',
+            'views/hello.html',
+            'views/welcome.html',
+            'views/detail.html',
+            'viewmodels/shell.js',
+            'viewmodels/hello.js',
+            'viewmodels/welcome.js'
+        ];
+        
+        var ctx = this;
+        _.each(views, function(val) {
+            ctx.copy(viewsSrc + val, makepath('app', val));
+        });
+        
+        this.copy('src/main/resources/assets/css/starterkit.css', makepath('css', 'starterkit.css'));
+        this.copy('src/main/resources/assets/img/.gitkeep', makepath('img', '.gitkeep'));
+        this.copy('src/main/resources/assets/less/.gitkeep', makepath('less', '.gitkeep'));
+        
         this.template('src/main/resources/assets/index.html', makepath('index.html'));
         this.template('src/main/resources/assets/app/index.js', makepath('app', 'index.js'));
     }

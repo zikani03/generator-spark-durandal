@@ -1,7 +1,7 @@
 requirejs.config({
     paths: {
         'text': '../lib/require/text',
-        'durandal':'../lib/durandal/js',
+        'durandal': '../lib/durandal/js',
         'plugins' : '../lib/durandal/js/plugins',
         'transitions' : '../lib/durandal/js/transitions',
         'knockout': '../lib/knockout/knockout-3.1.0',
@@ -12,7 +12,7 @@ requirejs.config({
         'bootstrap': {
             deps: ['jquery'],
             exports: 'jQuery'
-       }
+        }
     }
 });
 
@@ -21,14 +21,14 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'],  function (s
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = <%= applicationName %>;
+    app.title = '<%= applicationName %>';
 
     app.configurePlugins({
-        router:true,
+        router: true,
         dialog: true
     });
 
-    app.start().then(function() {
+    app.start().then(function () {
         //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
         //Look for partial views in a 'views' folder in the root.
         viewLocator.useConvention();
