@@ -6,17 +6,17 @@ import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import <%= packageName %>.resources.Controller;
+import <%= packageName %>.framework.AbstractResource;
 
 public abstract class AbstractApplication {
     private final Logger LOG = LoggerFactory.getLogger(AbstractApplication.class);
 
-    protected List<Controller> controllers;
+    protected List<AbstractResource> controllers;
 
     private String staticAssetsDir;
     
     protected AbstractApplication() {
-        this.controllers = new ArrayList<Controller>();
+        this.controllers = new ArrayList<AbstractResource>();
     }
     
     public abstract void bootstrap() throws Exception;
@@ -35,11 +35,11 @@ public abstract class AbstractApplication {
     
     public abstract void configureControllers();
     
-    public void addResource(Controller controller) {
+    public void addResource(AbstractResource controller) {
         this.addController(controller);
     }
     
-    public void addController(Controller controller) {
+    public void addController(AbstractResource controller) {
         this.controllers.add(controller);
     }
     

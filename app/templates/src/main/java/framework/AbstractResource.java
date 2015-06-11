@@ -5,7 +5,7 @@ import spark.Spark;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public abstract class AbstractResource implements Controller {
+public abstract class AbstractResource {
     protected static final String APPLICATION_JSON_UTF_8 = "application/json;charset=utf-8";
     private final Logger LOG = LoggerFactory.getLogger(AbstractResource.class);
 
@@ -35,4 +35,6 @@ public abstract class AbstractResource implements Controller {
         return getRootPath().concat(
                 apiPath.startsWith(FORWARD_SLASH) ? apiPath : FORWARD_SLASH.concat(apiPath));
     }
+    
+    public abstract void registerRoutes();  
 }
