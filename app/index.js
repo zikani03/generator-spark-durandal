@@ -71,6 +71,7 @@ module.exports = yeoman.generators.Base.extend({
         this.copy('.gitignore', '.gitignore');
         this.copy('findbugs-exclude.xml', 'findbugs-exclude.xml');
         this.copy('README.md', 'README.md');    
+        this.copy('.yo-rc', '.yo-rc.json');
     },
     
     sparkapp: function () {
@@ -82,12 +83,11 @@ module.exports = yeoman.generators.Base.extend({
         }
         
         this.template('src/main/java/Application.java', makepath('Application.java'));
-        this.template('src/main/java/AbstractApplication.java', makepath('AbstractApplication.java'));
+        this.template('src/main/java/framework/AbstractApplication.java', makepath('framework', 'AbstractApplication.java'));
+        this.template('src/main/java/framework/AbstractResource.java', makepath('framework', 'AbstractResource.java'));
         this.template('src/main/java/resources/Controller.java', makepath('resources', 'Controller.java'));
-        this.template('src/main/java/resources/AbstractResource.java', makepath('resources', 'AbstractResource.java'));
         this.template('src/main/java/resources/HelloResource.java', makepath('resources', 'HelloResource.java'));
         this.template('src/main/java/controllers/HelloController.java', makepath('controllers', 'HelloController.java'));
         this.template('src/main/java/util/JsonTransformer.java', makepath('util', 'JsonTransformer.java'));
-        this.copy('yo-rc', '.yo-rc.json');
     }
 });
