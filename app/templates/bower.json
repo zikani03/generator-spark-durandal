@@ -6,6 +6,7 @@
         "knockout" : "^3.3.0",
         "Durandal" : "~2.1.0",
         "bootstrap-css": "latest",
+        "lodash": "^3.3.0"
     },
     "devDependencies" : {},
     "resolutions" : {
