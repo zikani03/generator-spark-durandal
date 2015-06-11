@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import <%= packageName %>.framework.AbstractResource;
 
-public class HelloController implements AbstractResource {
+public class HelloController extends AbstractResource {
     private static final Logger LOG = LoggerFactory.getLogger(HelloController.class);
     
     public HelloController(String apiContext) {
