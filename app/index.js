@@ -49,7 +49,7 @@ module.exports = yeoman.generators.Base.extend({
     
     createPOM: function() {
         // TODO: use regex in the replace, make sure we catch all whitespace
-        var artifactId = this.applicationName.replace(/s+/, '-').toLowerCase();
+        var artifactId = this.applicationName.replace(/\s+/, '-').toLowerCase();
         
         var data = {
             'packageName'    : this.packageName,
