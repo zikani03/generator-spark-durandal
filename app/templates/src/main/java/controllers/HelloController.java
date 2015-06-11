@@ -4,10 +4,14 @@ import spark.Spark;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import <%= packageName %>.resources.Controller;
+import <%= packageName %>.framework.AbstractResource;
 
-public class HelloController implements Controller {
+public class HelloController implements AbstractResource {
     private static final Logger LOG = LoggerFactory.getLogger(HelloController.class);
+    
+    public HelloController(String apiContext) {
+        super("/");
+    }
     
     @Override
     public void registerRoutes() {  
@@ -16,8 +20,8 @@ public class HelloController implements Controller {
          * URL /hello/:name
          * @author <authorName>
          */
-        Spark.get("/hello/:name", (request, response) -> {
-            String name = request.params("name");
+        Spark.get("/hello.html", (request, response) -> {
+            String name = request.queryParams("name");
             
             if (name.equals("")) {
                 name = "Stranger";

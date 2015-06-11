@@ -10,6 +10,10 @@ import <%= packageName %>.util.JsonTransformer;
 public class HelloResource extends AbstractResource {
     private static final Logger LOG = LoggerFactory.getLogger(HelloResource.class);
     
+    public HelloResource(String apiContext) {
+        super(apiContext);
+    }
+    
     @Override
     public void registerRoutes() {  
     
