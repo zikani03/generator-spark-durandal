@@ -1,4 +1,4 @@
-package <%= packageName %>.resources;
+package <%= packageName %>.framework;
 
 import spark.Spark;
 

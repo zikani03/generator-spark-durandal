@@ -5,6 +5,7 @@ import spark.Spark;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import <%= packageName %>.framework.AbstractResource;
 import <%= packageName %>.util.JsonTransformer;
 
 public class HelloResource extends AbstractResource {

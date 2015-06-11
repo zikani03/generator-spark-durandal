@@ -1,5 +1,6 @@
 package <%= packageName %>;
 
+import <%= packageName %>.framework.AbstractApplication;
 import <%= packageName %>.resources.HelloResource;
 import <%= packageName %>.util.CorsFilter;
 
