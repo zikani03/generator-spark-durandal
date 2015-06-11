@@ -1,7 +1,7 @@
 package <%= packageName %>;
 
-import <%= packageName %>.controllers.HelloController;
 import <%= packageName %>.resources.HelloResource;
+import <%= packageName %>.util.CorsFilter;
 
 public class Application extends AbstractApplication {
     
@@ -16,6 +16,7 @@ public class Application extends AbstractApplication {
     @Override
     public void bootstrap() {
         // TODO: custom pre-run configuration stuff here
+        CorsFilter.apply();
     }
     
     public void configureControllers() {
@@ -23,6 +24,5 @@ public class Application extends AbstractApplication {
         // e.g. this.addResource(new PostsResource())
         // e.g. this.addController(new ArticlesController())
         this.addResource(new HelloResource());
-        this.addController(new HelloController());
     }
 }
