@@ -17,6 +17,7 @@ public class Application extends AbstractApplication {
     public void bootstrap() {
         // TODO: custom pre-run configuration stuff here
         CorsFilter.apply();
+        this.setStaticAssetsDir("assets");
     }
     
     public void configureControllers() {

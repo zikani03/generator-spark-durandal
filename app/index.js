@@ -80,7 +80,7 @@ module.exports = yeoman.generators.Base.extend({
             var pathArr = ['src/main/java/' + self.packageName.replace(/\./g, path.sep)];
             pathArr = pathArr.concat(Array.prototype.slice.call(arguments));
             return pathArr.join(path.sep);
-        }
+        };
         
         this.template('src/main/java/Application.java', makepath('Application.java'));
         this.template('src/main/java/framework/AbstractApplication.java', makepath('framework', 'AbstractApplication.java'));
@@ -89,5 +89,16 @@ module.exports = yeoman.generators.Base.extend({
         this.template('src/main/java/controllers/HelloController.java', makepath('controllers', 'HelloController.java'));
         this.template('src/main/java/util/JsonTransformer.java', makepath('util', 'JsonTransformer.java'));
         this.template('src/main/java/util/CorsFilter.java', makepath('util', 'CorsFilter.java'));
+    },
+    
+    durandalapp: function () {
+        var makepath = function (filename) {
+            var pathArr = ['src/main/resources/assets/'];
+            pathArr = pathArr.concat(Array.prototype.slice.call(arguments));
+            return pathArr.join(path.sep);
+        };
+        
+        this.template('src/main/resources/assets/index.html', makepath('index.html'));
+        this.template('src/main/resources/assets/app/index.js', makepath('app', 'index.js'));
     }
 });
